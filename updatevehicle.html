@@ -1,0 +1,36 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<form action="/updatedv" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <div align="center">
+    <table width="285" border="1">
+      <tr>
+        <th width="140" scope="row">Vehicle number</th>
+        <td width="44"><label for="textfield"></label>
+        <input type="text" name="textfield" id="textfield"  value="{{val[1]}}"/></td>
+      </tr>
+      <tr>
+        <th scope="row">Company</th>
+        <td><label for="textfield2"></label>
+        <input type="text" name="textfield2" id="textfield2" value="{{val[2]}}" /></td>
+      </tr>
+      <tr>
+        <th scope="row">Model</th>
+        <td><input type="text" name="textfield3" id="textfield3" value="{{val[3]}}"/></td>
+      </tr>
+      <tr>
+        <th scope="row">Image</th>
+        <td>
+        <a href="{{url_for('changimg',id=val[0])}}">change photo</a></td>
+      </tr>
+      <tr>
+        <th scope="row">Rent</th>
+        <td><input type="text" name="textfield4" id="textfield4" value="{{val[5]}}"/></td>
+      </tr>
+      <tr>
+        <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="UPDATE" /></th>
+      </tr>
+    </table>
+  </div>
+  <div align="center"></div>
+</form>
+{% endblock %}
