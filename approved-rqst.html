@@ -1,0 +1,28 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <table width="200" border="1">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Vehicle_num</th>
+        <th scope="col">ompany</th>
+        <th scope="col">From-To</th>
+        <th scope="col">Rent</th>
+        <th scope="col">Document</th>
+      </tr>
+        {% for d in val %}
+      <tr>
+        <td>&nbsp;{{d[3]}}</td>
+        <td>{{d[1]}}</td>
+        <td></td>
+        <td>{{d[2]}}</td>
+        <td>&nbsp;{{d[5]}}</td>
+        <td><img src="../static/image/{{d[4]}}" alt="no img" height="150" width="150"/></td>
+      </tr>
+        {% endfor %}
+    </table>
+  </div>
+</form>
+{% endblock %}

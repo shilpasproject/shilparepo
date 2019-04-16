@@ -1,0 +1,28 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/cmplnt">
+  <div align="center">
+    <table width="200" border="1">
+      <tr>
+        <th scope="row">officer</th>
+        <td><label for="select"></label>
+          <select name="select" id="select">
+            {% for d in val %}
+            <option value="{{d[0]}}">{{d[1]}}
+
+            </option>
+            {% endfor %}
+        </select></td>
+      </tr>
+      <tr>
+        <th scope="row">complaint</th>
+        <td><label for="textarea"></label>
+        <textarea name="textarea" id="textarea" cols="45" rows="5" required></textarea></td>
+      </tr>
+      <tr>
+        <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="ADD" /></th>
+      </tr>
+    </table>
+  </div>
+</form>
+{% endblock %}
