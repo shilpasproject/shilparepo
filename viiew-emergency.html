@@ -1,0 +1,21 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <table width="200" border="1">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Vehicle_num</th>
+        <th scope="col">&nbsp;</th>
+      </tr>
+      {% for d in val %}
+      <tr>
+        <td>{{d[1]}}&nbsp;</td>
+        <td>&nbsp;{{d[2]}}</td>
+        <td><a href="https://www.google.com/maps?q={{d[6]}},{{d[7]}}">track</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</form>
+{% endblock %}

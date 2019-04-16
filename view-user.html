@@ -1,0 +1,23 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <table width="423" border="1">
+      <tr>
+        <th width="36" scope="col">name</th>
+        <th width="64" scope="col">document</th>
+        <th width="118" scope="col">self number</th>
+        <th width="177" scope="col">guardian number</th>
+      </tr>
+      {% for d in val %}
+      <tr>
+        <td>&nbsp;{{d[1]}}</td>
+        <td><a href="../static/document/{{d[2]}}"download>download</a></td>
+        <td>&nbsp;{{d[3]}}</td>
+        <td>&nbsp;{{d[4]}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</form>
+{% endblock %}
