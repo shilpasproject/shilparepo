@@ -1,0 +1,31 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <table width="364" border="1">
+      <tr>
+        <th width="52" scope="col">vehicle number</th>
+        <th width="13" scope="col">company</th>
+        <th width="13" scope="col">model</th>
+        <th width="13" scope="col">imgae</th>
+        <th width="13" scope="col">Rent</th>
+        <th width="13" scope="col">&nbsp;</th>
+        <th width="13" scope="col">&nbsp;</th>
+        <th width="182" scope="col">&nbsp;</th>
+      </tr>
+      {% for d in val %}
+      <tr>
+        <td>{{d[1]}}&nbsp;</td>
+        <td>&nbsp;{{d[2]}}</td>
+        <td>&nbsp;{{d[3]}}</td>
+        <td>&nbsp;<img src="../static/image/{{d[4]}}" alt="no img" width="150" height="150"/></td>
+        <td>{{d[5]}}&nbsp;</td>
+        <td><a href="{{url_for('editv',id=d[0])}}">edit</a></td>
+        <td><a href="{{url_for('deletev',id=d[0])}}">delete</a></td>
+        <td>&nbsp;</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</form>
+{% endblock %}
